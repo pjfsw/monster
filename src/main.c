@@ -1,7 +1,12 @@
 #include <stdio.h>
-#include "monster_engine.h"
+#include "mengine.h"
 
 int main(int argc, char **argv) {
-    MonsterEngine *me = me_create();
+    MEngine *me = me_create();
+    if (me == NULL) {
+        return 1;
+    }
+    me_run(me);
     me_destroy(me);
+    return 0;
 }
