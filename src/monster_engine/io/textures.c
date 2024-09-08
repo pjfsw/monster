@@ -2,12 +2,6 @@
 
 #include <stdlib.h>
 
-struct _Texture {
-    SDL_Texture *texture;
-    int width;
-    int height;
-};
-
 struct _Textures {
     int capacity;
     int next;

@@ -4,7 +4,12 @@
 #include "SDL.h"
 
 typedef struct _Textures Textures;
-typedef struct _Texture Texture;
+
+typedef struct {
+    SDL_Texture *texture;
+    int width;
+    int height;
+} Texture;
 
 Textures *textures_create(int capacity, SDL_Renderer *renderer);
 

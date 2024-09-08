@@ -5,11 +5,9 @@
 #include "textures.h"
 
 
-typedef struct {
-    // Playfield width
-    int width;
-    // Playfield height
-    int height;
+typedef struct {    
+    int width; // Playfield unscaled width e.g. 320
+    int height; // Playfield unscaled height e.g. 180
     SDL_Window *window;
     SDL_Renderer *renderer;
     Textures *textures;
