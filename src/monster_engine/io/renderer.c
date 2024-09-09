@@ -21,7 +21,7 @@ Renderer *renderer_create(int width, int height) {
     int h = (hscale < vscale) ? height * hscale : height * vscale;
 
     if (SDL_CreateWindowAndRenderer(w,h,
-            SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_RESIZABLE | SDL_RENDERER_ACCELERATED,
+            SDL_WINDOW_RESIZABLE | SDL_RENDERER_ACCELERATED,
             &instance->window,
             &instance->renderer)) {
         fprintf(stderr, "Failed to create window: %s\n", SDL_GetError());
