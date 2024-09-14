@@ -3,6 +3,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#include "tilemap/tilemap.h"
+#include "tilemap/tilemap_creator.h"
+
 MEngine *me_create() {
     MEngine *me = calloc(1, sizeof(MEngine));
     me->renderer = renderer_create(320,180);
@@ -17,6 +20,7 @@ MEngine *me_create() {
 void me_run(MEngine *me) {
     Input *input = me->input;
     Renderer *renderer = me->renderer;
+    Tilemap *tilemap = tilemap_generate();
     while (true) {
         input_poll(input);
         if (input_is_quit(input)) {
@@ -25,6 +29,7 @@ void me_run(MEngine *me) {
         }
         renderer_render_frame(renderer);
     }    
+    tilemap_destroy(tilemap);
 }
 
 void me_destroy(MEngine *me) {
